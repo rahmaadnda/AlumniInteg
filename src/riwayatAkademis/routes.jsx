@@ -11,7 +11,7 @@ import DetailPenilaianMahasiswaPage from './containers/DetailPenilaianMahasiswaP
 const riwayatAkademisRoutes = [
 { 
 	path: "/akademis/riwayat",
-	element: <RequireAuth permissionNeeded="ReadRencanaStudiMe" ><DaftarRiwayatAkademisPage/></RequireAuth>
+	element: <RequireAuth permissionNeeded="ReadKelasMahasiswaMe" ><DaftarRiwayatAkademisPage/></RequireAuth>
 }
 
 	
