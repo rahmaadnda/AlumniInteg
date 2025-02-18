@@ -3,13 +3,14 @@
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
+import RequireAuth from "@/commons/auth/RequireAuth";
 import React from 'react';
 import IsiUbahIRSPage from './containers/IsiUbahIRSPage'
 
 const isiUbahIRSRoutes = [
 { 
 	path: "/irs/isi",
-	element: <IsiUbahIRSPage />,
+	element: <RequireAuth permissionNeeded="ReadRencanaStudiMe" ><IsiUbahIRSPage/></RequireAuth>
 }
 
 	

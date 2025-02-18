@@ -38,36 +38,6 @@ export const settingsMenu = [
   
 export default menus
 addMenu({
-	route: '/pembayaran',
-    label: 'Pembayaran',
-	subMenus: []
-})
-
-addMenu({
-	route: '#',
-    label: 'CPL',
-	subMenus: []
-})
-
-addSubMenu('CPL', {
-	route: '/cpl',
-	label: 'CPL',
-	
-})
-
-addSubMenu('CPL', {
-	route: '/cpl/laporan',
-	label: 'Laporan CPL',
-	
-})
-
-addMenu({
-	route: '/kelas',
-    label: 'Kelas',
-	subMenus: []
-})
-
-addMenu({
 	route: '#',
     label: 'IRS',
 	subMenus: []
@@ -92,26 +62,14 @@ addSubMenu('IRS', {
 })
 
 addMenu({
-	route: '/programstudi',
-    label: 'Program Studi',
-	subMenus: []
-})
-
-addMenu({
-	route: '/kurikulum',
-    label: 'Kurikulum',
+	route: '/semester',
+    label: 'Semester',
 	subMenus: []
 })
 
 addMenu({
 	route: '/matakuliah',
     label: 'Mata Kuliah',
-	subMenus: []
-})
-
-addMenu({
-	route: '/semester',
-    label: 'Semester',
 	subMenus: []
 })
 
@@ -134,21 +92,9 @@ addSubMenu('Akademis', {
 })
 
 addMenu({
-	route: '#',
-    label: 'Verifikasi Identitas',
+	route: '/pembayaran',
+    label: 'Pembayaran',
 	subMenus: []
-})
-
-addSubMenu('Verifikasi Identitas', {
-	route: '/verifikasialumni',
-	label: 'Verifikasi Alumni',
-	
-})
-
-addSubMenu('Verifikasi Identitas', {
-	route: '/verifikasimahasiswa',
-	label: 'Verifikasi Mahasiswa',
-	
 })
 
 addMenu({
@@ -179,4 +125,58 @@ addSubMenu('CPMK', {
 	route: '/cpmk/laporan',
 	label: 'Laporan CPMK',
 	
+})
+
+addMenu({
+	route: '/kurikulum',
+    label: 'Kurikulum',
+	subMenus: []
+})
+
+addMenu({
+	route: '#',
+    label: 'Verifikasi Identitas',
+	subMenus: []
+})
+
+addSubMenu('Verifikasi Identitas', {
+	route: '/verifikasialumni',
+	label: 'Verifikasi Alumni',
+	
+})
+
+addSubMenu('Verifikasi Identitas', {
+	route: '/verifikasimahasiswa',
+	label: 'Verifikasi Mahasiswa',
+	
+})
+
+addMenu({
+	route: '/kelas',
+    label: 'Kelas',
+	subMenus: []
+})
+
+addMenu({
+	route: '#',
+    label: 'CPL',
+	subMenus: []
+})
+
+addSubMenu('CPL', {
+	route: '/cpl',
+	label: 'CPL',
+	
+})
+
+addSubMenu('CPL', {
+	route: '/cpl/laporan',
+	label: 'Laporan CPL',
+	
+})
+
+addMenu({
+	route: '/programstudi',
+    label: 'Program Studi',
+	subMenus: []
 })

@@ -18,6 +18,19 @@ Verifikasi Alumni
 
 
 
+Pembayaran
+	tes1 Form Pembayaran Page
+
+/*
+	Generated on 22/10/2024 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.10
+*/
+
+
+
+
+
 Verifikasi Mahasiswa
 	tes1 Cari Mahasiswa
 	tes1 Detail Mahasiswa
@@ -35,19 +48,6 @@ Verifikasi Mahasiswa
 	version 3.5.10
 */
 
-
-
-
-
-
-Pembayaran
-	tes1 Form Pembayaran Page
-
-/*
-	Generated on 22/10/2024 by UI Generator PRICES-IDE
-	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.10
-*/
 
 
 
