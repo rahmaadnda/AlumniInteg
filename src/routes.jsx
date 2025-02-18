@@ -4,25 +4,25 @@ import userRoutes from "@/user/routes";
 import roleRoutes from "@/role/routes";
 import staticPageRoutes from "@/staticPage/routes";
 import homeRoutes from "@/home/routes";
-import kurikulumRoutes from "@/kurikulum/routes";
 import pembayaranRoutes from "@/pembayaran/routes";
-import programStudiRoutes from "@/programStudi/routes";
 import cPLRoutes from "@/cPL/routes";
 import laporanCPLRoutes from "@/laporanCPL/routes";
-import verifikasiAlumniRoutes from "@/verifikasiAlumni/routes";
-import verifikasiMahasiswaRoutes from "@/verifikasiMahasiswa/routes";
+import kelasRoutes from "@/kelas/routes";
 import lihatIRSRoutes from "@/lihatIRS/routes";
 import isiUbahIRSRoutes from "@/isiUbahIRS/routes";
 import pengaturanPengisianIRSRoutes from "@/pengaturanPengisianIRS/routes";
+import programStudiRoutes from "@/programStudi/routes";
+import kurikulumRoutes from "@/kurikulum/routes";
 import mataKuliahRoutes from "@/mataKuliah/routes";
-import penilaianKelasRoutes from "@/penilaianKelas/routes";
-import kelasRoutes from "@/kelas/routes";
+import semesterRoutes from "@/semester/routes";
 import ringkasanAkademisRoutes from "@/ringkasanAkademis/routes";
 import riwayatAkademisRoutes from "@/riwayatAkademis/routes";
+import verifikasiAlumniRoutes from "@/verifikasiAlumni/routes";
+import verifikasiMahasiswaRoutes from "@/verifikasiMahasiswa/routes";
+import penilaianKelasRoutes from "@/penilaianKelas/routes";
 import cPMKRoutes from "@/cPMK/routes";
 import subCPMKRoutes from "@/subCPMK/routes";
 import laporanCPMKRoutes from "@/laporanCPMK/routes";
-import semesterRoutes from "@/semester/routes";
 
 const GlobalRoutes = () => {
   const router = useRoutes([
@@ -31,25 +31,25 @@ const GlobalRoutes = () => {
 	...userRoutes,
 	...roleRoutes,
 	...homeRoutes, 
-	...kurikulumRoutes, 
 	...pembayaranRoutes, 
-	...programStudiRoutes, 
 	...cPLRoutes, 
 	...laporanCPLRoutes, 
-	...verifikasiAlumniRoutes, 
-	...verifikasiMahasiswaRoutes, 
+	...kelasRoutes, 
 	...lihatIRSRoutes, 
 	...isiUbahIRSRoutes, 
 	...pengaturanPengisianIRSRoutes, 
+	...programStudiRoutes, 
+	...kurikulumRoutes, 
 	...mataKuliahRoutes, 
-	...penilaianKelasRoutes, 
-	...kelasRoutes, 
+	...semesterRoutes, 
 	...ringkasanAkademisRoutes, 
 	...riwayatAkademisRoutes, 
+	...verifikasiAlumniRoutes, 
+	...verifikasiMahasiswaRoutes, 
+	...penilaianKelasRoutes, 
 	...cPMKRoutes, 
 	...subCPMKRoutes, 
 	...laporanCPMKRoutes, 
-	...semesterRoutes, 
   ])
   return router
 }
