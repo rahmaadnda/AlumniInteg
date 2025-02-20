@@ -1,18 +1,20 @@
-Verifikasi Alumni
-	tes1 Cari Alumni
-	tes1 Detail Alumni
+Verifikasi Mahasiswa
+	tes1 Cari Mahasiswa
+	tes1 Detail Mahasiswa
 
 /*
 	Generated on 22/10/2024 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
-	
+
+
 /*
 	Generated on 22/10/2024 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
+
 
 
 
@@ -31,23 +33,21 @@ Pembayaran
 
 
 
-Verifikasi Mahasiswa
-	tes1 Cari Mahasiswa
-	tes1 Detail Mahasiswa
+Verifikasi Alumni
+	tes1 Cari Alumni
+	tes1 Detail Alumni
 
 /*
 	Generated on 22/10/2024 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
-
-
+	
 /*
 	Generated on 22/10/2024 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
-
 
 
 

@@ -9,25 +9,25 @@ import * as Layouts from '@/commons/layouts';
 import { Link, useParams } from "react-router";
 import { HeaderContext } from "@/commons/components"
 
-import DetailSubCPMK from '../components/DetailSubCPMK'
-import getSubCPMKDataDetail from '../services/getSubCPMKDataDetail'
-const DetailSubCPMKPage = props => {
+import DetailMahasiswa from '../components/DetailMahasiswa'
+import getDetailDataMahasiswa from '../services/getDetailDataMahasiswa'
+const DetailMahasiswaPage = props => {
 const [isLoading, setIsLoading] = useState({
-	detailSubCPMK: false,
+	detailMahasiswa: false,
 
 	});
 	const { setTitle } = useContext(HeaderContext);
 
-const [subCPMKDataDetail, setSubCPMKDataDetail] = useState()
+const [detailDataMahasiswa, setDetailDataMahasiswa] = useState()
 const { id } = useParams()
 useEffect(() => {
 	const fetchData = async () => {
 		try {
-			setIsLoading(prev => ({...prev, detailSubCPMK: true}))
-			const { data: subCPMKDataDetail } = await getSubCPMKDataDetail({ id })
-			setSubCPMKDataDetail(subCPMKDataDetail.data)
+			setIsLoading(prev => ({...prev, detailMahasiswa: true}))
+			const { data: detailDataMahasiswa } = await getDetailDataMahasiswa({ id })
+			setDetailDataMahasiswa(detailDataMahasiswa.data)
 		} finally {
-			setIsLoading(prev => ({...prev, detailSubCPMK: false}))
+			setIsLoading(prev => ({...prev, detailMahasiswa: false}))
 		}
 	}
 	 fetchData()
@@ -35,14 +35,14 @@ useEffect(() => {
 
 	
 	useEffect(() => {
-		setTitle("Detail SubCPMK Page")
+		setTitle("Detail Mahasiswa Page")
 	}, []);
 return (
 	<Layouts.ViewContainerLayout
 		buttons={
 			<>
 			<Layouts.ViewContainerBackButtonLayout>
-			  	<Link to={`/subcpmk
+			  	<Link to={`/daftarsemuamahasiswa
 			  	`}>
 			  		<Button className="p-4 w-full" variant="secondary">
 			  		  Kembali
@@ -55,17 +55,17 @@ return (
 		}
 	>
 <Layouts.DetailContainerLayout
-	title={"Detail SubCPMK"}
-	singularName={"SubCPMK"}
-	items={{...subCPMKDataDetail}}
-	isLoading={isLoading.detailSubCPMK}
+	title={"Detail Mahasiswa"}
+	singularName={"Mahasiswa"}
+	items={{...detailDataMahasiswa}}
+	isLoading={isLoading.detailMahasiswa}
 	isCorrelatedWithAnotherComponent={false}
 >
-	<DetailSubCPMK {...{ data : { ...subCPMKDataDetail }}} />
+	<DetailMahasiswa {...{ data : { ...detailDataMahasiswa }}} />
 </Layouts.DetailContainerLayout>
 
 	</Layouts.ViewContainerLayout>
   )
 }
-export default DetailSubCPMKPage
+export default DetailMahasiswaPage
 

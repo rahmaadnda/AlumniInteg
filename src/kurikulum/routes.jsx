@@ -13,7 +13,7 @@ import TambahKurikulumPage from './containers/TambahKurikulumPage'
 const kurikulumRoutes = [
 { 
 	path: "/kurikulum",
-	element: <DaftarKurikulumPage />,
+	element: <RequireAuth permissionNeeded="ReadRencanaStudiMe" ><DaftarKurikulumPage/></RequireAuth>
 }
 
 	
@@ -34,7 +34,7 @@ const kurikulumRoutes = [
 ,
 { 
 	path: "/kurikulum/:id",
-	element: <DetailKurikulumPage />,
+	element: <RequireAuth permissionNeeded="CreateRencanaStudiMe" ><DetailKurikulumPage/></RequireAuth>
 }
 
 	
