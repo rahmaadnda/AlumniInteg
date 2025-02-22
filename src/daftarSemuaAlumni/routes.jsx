@@ -3,20 +3,19 @@
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
-import RequireAuth from "@/commons/auth/RequireAuth";
-import React from 'react';
+import RequireAuth from '@/commons/auth/RequireAuth'
 
 import DaftarSemuaAlumniPage from './containers/DaftarSemuaAlumniPage'
 import DetailAlumniPage from './containers/DetailAlumniPage'
 
 const daftarSemuaAlumniRoutes = [
 	{ 
-		path: "/daftarsemuaalumni/detail/:id",
-		element: <RequireAuth permissionNeeded="ReadAlumni" ><DetailAlumniPage/></RequireAuth>
-	},
-	{ 
 		path: "/daftarsemuaalumni",
 		element: <RequireAuth permissionNeeded="ReadAlumni" ><DaftarSemuaAlumniPage/></RequireAuth>
+	},
+	{ 
+		path: "/daftarsemuaalumni/detail/:id",
+		element: <RequireAuth permissionNeeded="ReadAlumni" ><DetailAlumniPage/></RequireAuth>
 	}
 ]
 
