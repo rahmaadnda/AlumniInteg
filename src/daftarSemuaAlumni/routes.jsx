@@ -10,12 +10,12 @@ import DetailAlumniPage from './containers/DetailAlumniPage'
 
 const daftarSemuaAlumniRoutes = [
 	{ 
-		path: "/daftarsemuaalumni",
-		element: <RequireAuth permissionNeeded="ReadAlumni" ><DaftarSemuaAlumniPage/></RequireAuth>
-	},
-	{ 
 		path: "/daftarsemuaalumni/detail/:id",
 		element: <RequireAuth permissionNeeded="ReadAlumni" ><DetailAlumniPage/></RequireAuth>
+	},
+	{ 
+		path: "/daftarsemuaalumni",
+		element: <RequireAuth permissionNeeded="ReadAlumni" ><DaftarSemuaAlumniPage/></RequireAuth>
 	}
 ]
 

@@ -10,12 +10,12 @@ import DetailMahasiswaPage from './containers/DetailMahasiswaPage'
 
 const daftarMahasiswaRoutes = [
 	{ 
-		path: "/daftarmahasiswa",
-		element: <RequireAuth permissionNeeded="ReadMahasiswaPublic" ><DaftarMahasiswaPage/></RequireAuth>
-	},
-	{ 
 		path: "/daftarmahasiswa/detail/:id",
 		element: <RequireAuth permissionNeeded="ReadMahasiswaPublic" ><DetailMahasiswaPage/></RequireAuth>
+	},
+	{ 
+		path: "/daftarmahasiswa",
+		element: <RequireAuth permissionNeeded="ReadMahasiswaPublic" ><DaftarMahasiswaPage/></RequireAuth>
 	}
 ]
 
