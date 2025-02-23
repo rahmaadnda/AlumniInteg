@@ -9,44 +9,47 @@ import * as Layouts from '@/commons/layouts';
 import { Link, useParams } from "react-router";
 import { HeaderContext } from "@/commons/components"
 import { useSearchParams } from "react-router";
-import FormTambahNilai from '../components/FormTambahNilai'
+import FormFormProfileUpdateAlumni from '../components/FormFormProfileUpdateAlumni'
 
-import getKomponenPenilaianDataList from '../services/getKomponenPenilaianDataList'
-const TambahNilaiMahasiswaPage = props => {
+import getDataAlumniUpdate from '../services/getDataAlumniUpdate'
+import getMakePublic from '../services/getMakePublic'
+const UpdateProfilePage = props => {
 const [isLoading, setIsLoading] = useState({
-	tambahNilai: false,
+	formProfileUpdateAlumni: false,
 
 	});
 	const { setTitle } = useContext(HeaderContext);
 
 const [searchParams] = useSearchParams()
-const mahasiswaId = searchParams.get('mahasiswaId')
-const kelasId = searchParams.get('kelasId')
-const [komponenPenilaianDataList, setKomponenPenilaianDataList] = useState()
+const id = searchParams.get('id')
+const [dataAlumniUpdate, setDataAlumniUpdate] = useState()
+const [makePublic, setMakePublic] = useState()
 
 useEffect(() => {
     const fetch = async () => {
-	  setIsLoading(prev => ({...prev, tambahNilai: true}))
-		const { data: komponenPenilaianDataListResponse } = await getKomponenPenilaianDataList({ mahasiswaId  })
+	  setIsLoading(prev => ({...prev, formProfileUpdateAlumni: true}))
+		const { data: dataAlumniUpdateResponse } = await getDataAlumniUpdate({ id  })
+		const { data: makePublicResponse } = await getMakePublic({ id  })
 
-	    setKomponenPenilaianDataList(komponenPenilaianDataListResponse.data)
+	    setDataAlumniUpdate(dataAlumniUpdateResponse.data)
+	    setMakePublic(makePublicResponse.data)
 
 
-	    setIsLoading(prev => ({...prev, tambahNilai: false}))
+	    setIsLoading(prev => ({...prev, formProfileUpdateAlumni: false}))
     }
     fetch()
   }, [])
 
 	
 	useEffect(() => {
-		setTitle("Tambah Nilai Mahasiswa Page")
+		setTitle("Update Profile Page")
 	}, []);
 return (
 	<Layouts.ViewContainerLayout
 		buttons={
 			<>
 			<Layouts.ViewContainerBackButtonLayout>
-			  	<Link to={`/penilaian-kelas/:id/nilai/:mahasiswaId
+			  	<Link to={`/profilealumni
 			  	`}>
 			  		<Button className="p-4" variant="secondary">
 			  		  Kembali
@@ -59,14 +62,15 @@ return (
 		}
 	>
 <Layouts.FormContainerLayout
-		singularName={"Nilai"}
-		isLoading={isLoading.tambahNilai}
+		singularName={"Profile"}
+		isLoading={isLoading.formProfileUpdateAlumni}
 	>
-		{komponenPenilaianDataList ? 
+		{dataAlumniUpdate && makePublic ? 
 		(<>
-		 <FormTambahNilai
+		 <FormFormProfileUpdateAlumni
 			{...{ 
-				komponenPenilaianDataList
+				dataAlumniUpdate
+, 				makePublic
 				}}
 		 /> 
 		</>)  : (<></>)}
@@ -75,5 +79,5 @@ return (
 	</Layouts.ViewContainerLayout>
   )
 }
-export default TambahNilaiMahasiswaPage
+export default UpdateProfilePage
 
