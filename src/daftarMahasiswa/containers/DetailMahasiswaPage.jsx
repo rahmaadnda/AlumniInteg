@@ -6,7 +6,7 @@
 import React, { useEffect, useState, useContext} from 'react'
 import { Button, Spinner } from "@/commons/components"
 import * as Layouts from '@/commons/layouts';
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams } from "react-router";
 import { HeaderContext } from "@/commons/components"
 
 import DetailMahasiswa from '../components/DetailMahasiswa'
@@ -19,12 +19,12 @@ const [isLoading, setIsLoading] = useState({
 	const { setTitle } = useContext(HeaderContext);
 
 const [detailDataMahasiswa, setDetailDataMahasiswa] = useState()
-const { id } = useParams()
+const {  } = useParams()
 useEffect(() => {
 	const fetchData = async () => {
 		try {
 			setIsLoading(prev => ({...prev, detailMahasiswa: true}))
-			const { data: detailDataMahasiswa } = await getDetailDataMahasiswa({ id })
+			const { data: detailDataMahasiswa } = await getDetailDataMahasiswa({ invalid })
 			setDetailDataMahasiswa(detailDataMahasiswa.data)
 		} finally {
 			setIsLoading(prev => ({...prev, detailMahasiswa: false}))

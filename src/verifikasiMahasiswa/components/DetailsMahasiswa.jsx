@@ -4,7 +4,7 @@
 	version 3.5.10
 */
 import React, { useContext } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from "react-router";
 
 import { useAuth } from '@/commons/auth';
 import { Button, Detail, VisualizationAttr, Modal, Spinner } from '@/commons/components';
@@ -22,27 +22,6 @@ const DetailsMahasiswa = ({ data }) => {
     <Layouts.DetailComponentLayout
       item={data}
       itemsAttrs={[
-        {
-          id: "nama",
-          condition: "",
-          label: "Nama",
-          featureName: "nama",
-        }
-        ,
-        {
-          id: "nPM",
-          condition: "",
-          label: "NPM",
-          featureName: "npm",
-        }
-        ,
-        {
-          id: "email",
-          condition: "",
-          label: "Email",
-          featureName: "email",
-        }
-        ,
         {
           id: "tahunAngkatan",
           condition: "",

@@ -1,11 +1,11 @@
 /*
 	Generated on 22/10/2024 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.5
+	version 3.5.10
 */
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router";
 import {
   Button,
   Form,
@@ -72,6 +72,7 @@ const FormFormProfileUpdateAlumni = ({
 		  formFields={[
 			  
 			  <Controller
+			    key="nama"
 		        name="nama"
 		        control={control}
 		        render={({ field, fieldState }) => (
@@ -88,6 +89,7 @@ const FormFormProfileUpdateAlumni = ({
 	,
 			  
 			  <Controller
+			    key="npm"
 		        name="npm"
 		        control={control}
 		        render={({ field, fieldState }) => (
@@ -104,6 +106,7 @@ const FormFormProfileUpdateAlumni = ({
 	,
 			  
 			  <Controller
+			    key="email"
 		        name="email"
 		        control={control}
 		        render={({ field, fieldState }) => (
@@ -119,6 +122,7 @@ const FormFormProfileUpdateAlumni = ({
 	,
 			  
 			  <Controller
+			    key="tempatKerja"
 		        name="tempatKerja"
 		        control={control}
 		        render={({ field, fieldState }) => (
@@ -134,6 +138,7 @@ const FormFormProfileUpdateAlumni = ({
 	,
 			  
 			  <Controller
+			    key="pekerjaan"
 		        name="pekerjaan"
 		        control={control}
 		        render={({ field, fieldState }) => (
@@ -149,6 +154,7 @@ const FormFormProfileUpdateAlumni = ({
 	,
 			  
 			  <Controller
+			    key="tahunLulus"
 		        name="tahunLulus"
 		        control={control}
 		        render={({ field, fieldState }) => (
@@ -165,6 +171,7 @@ const FormFormProfileUpdateAlumni = ({
 	,
 			  
 			  <Controller
+			    key="portofolioUrl"
 		        name="portofolioUrl"
 		        control={control}
 		        render={({ field, fieldState }) => (
@@ -180,6 +187,7 @@ const FormFormProfileUpdateAlumni = ({
 	,
 			  
 			  <Controller
+			    key="linkedinUrl"
 		        name="linkedinUrl"
 		        control={control}
 		        render={({ field, fieldState }) => (
@@ -196,25 +204,26 @@ const FormFormProfileUpdateAlumni = ({
 	
 		  
 		  <Controller
-		  name="isPublic"
-		  control={control}
-		  render={({ field }) => (
-			  <div className="form-group">
-			  <label>
-				  <input
-				  type="checkbox"
-				  {...field}
-				  checked={field.value} 
-				  />
-				  Izinkan Akses Profile kepada Alumni dan Industri
-			  </label>
-			  </div>
-		  )}
-		  />
+		    key="isPublic"
+	        name="isPublic"
+	        control={control}
+	        render={({ field, fieldState }) => (
+					<MultiSelectionField
+				
+	            label="Izinkan Akses Profile kepada Alumni dan Industri"
+	            options={makePublic}
+	            placeholder="Masukkan izinkan akses profile kepada alumni dan industri"
+					fieldState={fieldState}
+					defaultValue={dataAlumniUpdate.isPublic}
+	            {...field}
+					isRequired={false}
+	          />
+	        )}
+	      />
 		  ]}
 	
 		  itemsEvents={[
-				<Button type="submit" variant="primary">Simpan</Button>
+				<Button key="Simpan" type="submit" variant="primary">Simpan</Button>
 	    ]}
 	  />
   )

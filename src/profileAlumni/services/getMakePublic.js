@@ -7,7 +7,7 @@ const getMakePublic = (params = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	let paramsGet = Object.assign(params, {token});
-	return axios.get(`${environment.rootApi}/call/mahasiswa/optionpublic`, {
+	return axios.get(`${environment.rootApi}/call/alumni/optionpublic`, {
 		params: paramsGet,		
 		headers: {
 			'Authorization': token,
