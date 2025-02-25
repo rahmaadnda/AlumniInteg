@@ -4,7 +4,7 @@
 	version 3.5.10
 */
 import React from 'react';
-import { Link, useNavigate, useParams } from "react-router";
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import { useAuth } from '@/commons/auth';
 import { Button, Modal } from '@/commons/components';
@@ -12,7 +12,7 @@ import { isMobile } from '@/commons/utils/responsive';
 
 import * as Layouts from "@/commons/layouts";
 
-const SemuaTable = ({ alumniDataList
+const SemuaTable = ({ tahunLulusSelectionField, alumniDataList
 
 	}) => {
   const { checkPermission } = useAuth();
@@ -25,14 +25,42 @@ const SemuaTable = ({ alumniDataList
   
   return (
     <Layouts.ListComponentTableLayout
-  	  items={[alumniDataList]}
+  	  items={[tahunLulusSelectionField, alumniDataList]}
   	  detail={detail}
+  	  isSearchable
+  	  filterFields={[
+  	    {
+  	      label: "Tahun Lulus",
+  	      featureName: "tahunLulus",
+  	      options: tahunLulusSelectionField,
+  	    }
+  	  ]}
   	  itemsAttrs={[
+  ,
+  		{
+            id: "nama",
+            condition: "isHeading",
+            label: "Nama",
+            featureName: "nama",
+  		}
+  ,
+  		{
+            id: "nPM",
+            condition: "isHeading",
+            label: "NPM",
+            featureName: "npm",
+  		}
+  ,
+  		{
+            id: "tahunLulus",
+            condition: "isHeading",
+            label: "Tahun Lulus",
+            featureName: "tahunLulus",
+  		}
   	  ]}
         itemsEvents={(semuaItem) => [
           <Link to={`/daftarsemuaalumni/detail/${semuaItem.id}`}>
-            <Button
-          	size="sm"
+            <Button 
           	variant=
           		"primary"
             >
