@@ -3,7 +3,6 @@
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
-import RequireAuth from "@/commons/auth/RequireAuth";
 import React from 'react';
 
 import LaporanCPLPage from './containers/LaporanCPLPage'
@@ -11,7 +10,7 @@ import LaporanCPLPage from './containers/LaporanCPLPage'
 const laporanCPLRoutes = [
 	{ 
 		path: "/cpl/laporan",
-		element: <RequireAuth permissionNeeded="ReadRencanaStudiMe" ><LaporanCPLPage/></RequireAuth>
+		element: <LaporanCPLPage />,
 	}
 ]
 
