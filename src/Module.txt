@@ -1,3 +1,19 @@
+Daftar Semua Alumni
+	tes1 Daftar Semua Alumni Page
+	tes1 Detail Alumni Page
+
+/*
+	Generated on 22/10/2024 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.10
+*/
+
+
+
+
+
+
+
 Profile Mahasiswa
 	tes1 Profile Mahasiswa Page
 	tes1 Update Profile Page
@@ -32,26 +48,6 @@ Profile Mahasiswa
 
 
 
-Buat Akun Alumni
-	tes1 Buat Akun Alumni Page
-	tes1 Detail Akun Alumni Page
-
-/*
-	Generated on 22/10/2024 by UI Generator PRICES-IDE
-	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.10
-*/
-	
-/*
-	Generated on 22/10/2024 by UI Generator PRICES-IDE
-	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.10
-*/
-
-
-
-
-
 Verifikasi Mahasiswa
 	tes1 Cari Mahasiswa
 	tes1 Detail Mahasiswa
@@ -74,8 +70,8 @@ Verifikasi Mahasiswa
 
 
 
-Daftar Semua Alumni
-	tes1 Daftar Semua Alumni Page
+Daftar Alumni
+	tes1 Daftar Alumni Page
 	tes1 Detail Alumni Page
 
 /*
@@ -83,8 +79,38 @@ Daftar Semua Alumni
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
+	
+/*
+	Generated on 22/10/2024 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.10
+*/
+	
+/*
+	Generated on 22/10/2024 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.10
+*/
+	
 
 
+
+
+Verifikasi Alumni
+	tes1 Cari Alumni
+	tes1 Detail Alumni
+
+/*
+	Generated on 22/10/2024 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.10
+*/
+	
+/*
+	Generated on 22/10/2024 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.10
+*/
 
 
 
@@ -113,54 +139,6 @@ Daftar Semua Mahasiswa
 */
 
 
-
-
-
-
-
-Daftar Mahasiswa
-	tes1 Daftar Mahasiswa Page
-	tes1 Detail Mahasiswa Page
-
-/*
-	Generated on 22/10/2024 by UI Generator PRICES-IDE
-	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.10
-*/
-
-/*
-	Generated on 22/10/2024 by UI Generator PRICES-IDE
-	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.10
-*/
-
-/*
-	Generated on 22/10/2024 by UI Generator PRICES-IDE
-	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.10
-*/
-
-
-
-
-
-
-
-Verifikasi Alumni
-	tes1 Cari Alumni
-	tes1 Detail Alumni
-
-/*
-	Generated on 22/10/2024 by UI Generator PRICES-IDE
-	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.10
-*/
-	
-/*
-	Generated on 22/10/2024 by UI Generator PRICES-IDE
-	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.10
-*/
 
 
 
@@ -198,6 +176,34 @@ Profile Alumni
 
 
 
+Daftar Mahasiswa
+	tes1 Daftar Mahasiswa Page
+	tes1 Detail Mahasiswa Page
+
+/*
+	Generated on 22/10/2024 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.10
+*/
+
+/*
+	Generated on 22/10/2024 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.10
+*/
+
+/*
+	Generated on 22/10/2024 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.5.10
+*/
+
+
+
+
+
+
+
 Pembayaran
 	tes1 Form Pembayaran Page
 
@@ -211,9 +217,9 @@ Pembayaran
 
 
 
-Daftar Alumni
-	tes1 Daftar Alumni Page
-	tes1 Detail Alumni Page
+Buat Akun Alumni
+	tes1 Buat Akun Alumni Page
+	tes1 Detail Akun Alumni Page
 
 /*
 	Generated on 22/10/2024 by UI Generator PRICES-IDE
@@ -226,13 +232,7 @@ Daftar Alumni
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
-	
-/*
-	Generated on 22/10/2024 by UI Generator PRICES-IDE
-	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.10
-*/
-	
+
 
 
 
