@@ -12,7 +12,7 @@ import { isMobile } from '@/commons/utils/responsive';
 
 import * as Layouts from "@/commons/layouts";
 
-const SemuaTable = ({ tahunLulusSelectionField, alumniDataList
+const SemuaTable = ({ alumniDataList
 
 	}) => {
   const { checkPermission } = useAuth();
@@ -25,38 +25,9 @@ const SemuaTable = ({ tahunLulusSelectionField, alumniDataList
   
   return (
     <Layouts.ListComponentTableLayout
-  	  items={[tahunLulusSelectionField, alumniDataList]}
+  	  items={[alumniDataList]}
   	  detail={detail}
-  	  isSearchable
-  	  filterFields={[
-  	    {
-  	      label: "Tahun Lulus",
-  	      featureName: "tahunLulus",
-  	      options: tahunLulusSelectionField,
-  	    }
-  	  ]}
   	  itemsAttrs={[
-  ,
-  		{
-            id: "nama",
-            condition: "isHeading",
-            label: "Nama",
-            featureName: "nama",
-  		}
-  ,
-  		{
-            id: "nPM",
-            condition: "isHeading",
-            label: "NPM",
-            featureName: "npm",
-  		}
-  ,
-  		{
-            id: "tahunLulus",
-            condition: "isHeading",
-            label: "Tahun Lulus",
-            featureName: "tahunLulus",
-  		}
   	  ]}
         itemsEvents={(semuaItem) => [
           <Link to={`/daftarsemuaalumni/detail/${semuaItem.id}`}>

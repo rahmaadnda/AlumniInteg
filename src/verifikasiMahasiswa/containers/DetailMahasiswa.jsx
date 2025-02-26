@@ -19,12 +19,12 @@ const [isLoading, setIsLoading] = useState({
 	const { setTitle } = useContext(HeaderContext);
 
 const [detailDataMahasiswa, setDetailDataMahasiswa] = useState()
-const { id } = useParams()
+const {  } = useParams()
 useEffect(() => {
 	const fetchData = async () => {
 		try {
 			setIsLoading(prev => ({...prev, detailsMahasiswa: true}))
-			const { data: detailDataMahasiswa } = await getDetailDataMahasiswa({ id })
+			const { data: detailDataMahasiswa } = await getDetailDataMahasiswa({ invalid })
 			setDetailDataMahasiswa(detailDataMahasiswa.data)
 		} finally {
 			setIsLoading(prev => ({...prev, detailsMahasiswa: false}))

@@ -3,8 +3,8 @@
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
-import RequireAuth from '@/commons/auth/RequireAuth'
-
+import RequireAuth from "@/commons/auth/RequireAuth";
+import React from 'react';
 import ProfileAlumniPage from './containers/ProfileAlumniPage'
 import UpdateProfilePage from './containers/UpdateProfilePage'
 
