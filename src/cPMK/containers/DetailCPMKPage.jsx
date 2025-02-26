@@ -12,7 +12,7 @@ import { useNavigate } from "react-router";
 import { useAuth } from '@/commons/auth';
 import DetailCPMK from '../components/DetailCPMK'
 import getCPMKDataDetail from '../services/getCPMKDataDetail'
-import SubTable from "../components/SubTable";
+import SubCPMKTable from "../components/SubCPMKTable";
 
 import getDataSubCPMK from '../services/getDataSubCPMK'
 const DetailCPMKPage = props => {
@@ -85,12 +85,12 @@ return (
 	<DetailCPMK {...{ data : { ...cPMKDataDetail }}} />
 </Layouts.DetailContainerLayout>
 <Layouts.ListContainerTableLayout
-	title={"Daftar Sub CPMK"}
-	singularName={"Sub"}
+	title={"Daftar SubCPMK"}
+	singularName={"SubCPMK"}
 	items={[dataSubCPMK]}
 	isLoading={isLoading.daftarSubCPMK}
 >
-	<SubTable
+	<SubCPMKTable
 		dataSubCPMK={dataSubCPMK}
 		
 	/>

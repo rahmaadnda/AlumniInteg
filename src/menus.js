@@ -39,12 +39,84 @@ export const settingsMenu = [
 export default menus
 addMenu({
 	route: '#',
+    label: 'CPMK',
+	subMenus: []
+})
+
+addSubMenu('CPMK', {
+	route: '/cpmk',
+	label: 'CPMK',
+	
+})
+
+addSubMenu('CPMK', {
+	route: '/subcpmk',
+	label: 'Sub-CPMK',
+	
+})
+
+addSubMenu('CPMK', {
+	route: '/cpmk/laporan',
+	label: 'Laporan CPMK',
+	
+})
+
+addMenu({
+	route: '/programstudi',
+    label: 'Program Studi',
+	subMenus: []
+})
+
+addMenu({
+	route: '/profilealumni',
+    label: 'Profile Alumni',
+	subMenus: []
+})
+
+addMenu({
+	route: '/kelas',
+    label: 'Kelas',
+	subMenus: []
+})
+
+addMenu({
+	route: '/penilaian-kelas',
+    label: 'Penilaian Kelas',
+	subMenus: []
+})
+
+addMenu({
+	route: '/semester',
+    label: 'Semester',
+	subMenus: []
+})
+
+addMenu({
+	route: '#',
+    label: 'Verifikasi Identitas',
+	subMenus: []
+})
+
+addSubMenu('Verifikasi Identitas', {
+	route: '/verifikasialumni',
+	label: 'Verifikasi Alumni',
+	
+})
+
+addSubMenu('Verifikasi Identitas', {
+	route: '/verifikasimahasiswa',
+	label: 'Verifikasi Mahasiswa',
+	
+})
+
+addMenu({
+	route: '#',
     label: 'Daftar Pengguna',
 	subMenus: []
 })
 
 addSubMenu('Daftar Pengguna', {
-	route: '/daftarsemuaalumni',
+	route: '',
 	label: 'Daftar Semua Alumni',
 	
 })
@@ -74,26 +146,8 @@ addSubMenu('Daftar Pengguna', {
 })
 
 addMenu({
-	route: '/semester',
-    label: 'Semester',
-	subMenus: []
-})
-
-addMenu({
-	route: '/approvalsubscription',
-    label: 'Approval Subscription',
-	subMenus: []
-})
-
-addMenu({
-	route: '/programstudi',
-    label: 'Program Studi',
-	subMenus: []
-})
-
-addMenu({
-	route: '/buatakunalumni',
-    label: 'Buat Akun Alumni',
+	route: '/pembayaran',
+    label: 'Pembayaran',
 	subMenus: []
 })
 
@@ -104,45 +158,21 @@ addMenu({
 })
 
 addMenu({
-	route: '/matakuliah',
-    label: 'Mata Kuliah',
-	subMenus: []
-})
-
-addMenu({
-	route: '/kelas',
-    label: 'Kelas',
-	subMenus: []
-})
-
-addMenu({
 	route: '#',
-    label: 'Akademis',
+    label: 'CPL',
 	subMenus: []
 })
 
-addSubMenu('Akademis', {
-	route: '/akademis/ringkasan',
-	label: 'Ringkasan',
+addSubMenu('CPL', {
+	route: '/cpl',
+	label: 'CPL',
 	
 })
 
-addSubMenu('Akademis', {
-	route: '/akademis/riwayat',
-	label: 'Riwayat',
+addSubMenu('CPL', {
+	route: '/cpl/laporan',
+	label: 'Laporan CPL',
 	
-})
-
-addMenu({
-	route: '/updatelulusan',
-    label: 'Update Lulusan',
-	subMenus: []
-})
-
-addMenu({
-	route: '/profilealumni',
-    label: 'Profile Alumni',
-	subMenus: []
 })
 
 addMenu({
@@ -171,108 +201,30 @@ addSubMenu('IRS', {
 
 addMenu({
 	route: '#',
-    label: 'CPMK',
+    label: 'Akademis',
 	subMenus: []
 })
 
-addSubMenu('CPMK', {
-	route: '/cpmk',
-	label: 'CPMK',
+addSubMenu('Akademis', {
+	route: '/akademis/ringkasan',
+	label: 'Ringkasan',
 	
 })
 
-addSubMenu('CPMK', {
-	route: '/subcpmk',
-	label: 'Sub-CPMK',
+addSubMenu('Akademis', {
+	route: '/akademis/riwayat',
+	label: 'Riwayat',
 	
-})
-
-addSubMenu('CPMK', {
-	route: '/cpmk/laporan',
-	label: 'Laporan CPMK',
-	
-})
-
-addMenu({
-	route: '/profileindustri',
-    label: 'Profile Industri',
-	subMenus: []
-})
-
-addMenu({
-	route: '/pengajuansubscription',
-    label: 'Pengajuan Subscription',
-	subMenus: []
-})
-
-addMenu({
-	route: '#',
-    label: 'Verifikasi Identitas',
-	subMenus: []
-})
-
-addSubMenu('Verifikasi Identitas', {
-	route: '/verifikasialumni',
-	label: 'Verifikasi Alumni',
-	
-})
-
-addSubMenu('Verifikasi Identitas', {
-	route: '/verifikasimahasiswa',
-	label: 'Verifikasi Mahasiswa',
-	
-})
-
-addMenu({
-	route: '#',
-    label: 'Pengumuman',
-	subMenus: []
-})
-
-addSubMenu('Pengumuman', {
-	route: '/pengumumanakademik',
-	label: 'Pengumuman Admin Akademik',
-	
-})
-
-addSubMenu('Pengumuman', {
-	route: '/pengumumanindustri',
-	label: 'Pengumuman Industri',
-	
-})
-
-addSubMenu('Pengumuman', {
-	route: '/pengumumanalumni',
-	label: 'Pengumuman Alumni',
-	
-})
-
-addMenu({
-	route: '#',
-    label: 'CPL',
-	subMenus: []
-})
-
-addSubMenu('CPL', {
-	route: '/cpl',
-	label: 'CPL',
-	
-})
-
-addSubMenu('CPL', {
-	route: '/cpl/laporan',
-	label: 'Laporan CPL',
-	
-})
-
-addMenu({
-	route: '/penilaian-kelas',
-    label: 'Penilaian Kelas',
-	subMenus: []
 })
 
 addMenu({
 	route: '/profilemahasiswa',
     label: 'Profile Mahasiswa',
+	subMenus: []
+})
+
+addMenu({
+	route: '/matakuliah',
+    label: 'Mata Kuliah',
 	subMenus: []
 })
