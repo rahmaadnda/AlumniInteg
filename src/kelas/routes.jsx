@@ -13,7 +13,7 @@ import TambahKelasPage from './containers/TambahKelasPage'
 const kelasRoutes = [
 { 
 	path: "/kelas",
-	element: <RequireAuth permissionNeeded="ReadRencanaStudiMe" ><DaftarKelasPage/></RequireAuth>
+	element: <DaftarKelasPage />,
 }
 
 	
