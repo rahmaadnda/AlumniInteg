@@ -10,7 +10,7 @@ import PengaturanMasaPengisianIRSPage from './containers/PengaturanMasaPengisian
 const pengaturanPengisianIRSRoutes = [
 { 
 	path: "/irs/pengaturan",
-	element: <RequireAuth permissionNeeded="UpdatePengisianRencanaStudi" ><PengaturanMasaPengisianIRSPage/></RequireAuth>
+	element: <RequireAuth permissionNeeded="ReadRencanaStudiMe" ><PengaturanMasaPengisianIRSPage/></RequireAuth>
 }
 
 	
