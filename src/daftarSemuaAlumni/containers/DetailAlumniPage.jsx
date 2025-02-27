@@ -10,14 +10,17 @@ import { Link, useParams } from "react-router";
 import { HeaderContext } from "@/commons/components"
 
 import DetailAlumni from '../components/DetailAlumni'
+import DetailAlumni1 from '../components/DetailAlumni1'
 const DetailAlumniPage = props => {
 const [isLoading, setIsLoading] = useState({
 	detailAlumni: false,
+	detailAlumni1: false,
 
 	});
 	const { setTitle } = useContext(HeaderContext);
 
 const { id } = useParams()
+const { id1 } = useParams()
 
 	
 	useEffect(() => {
@@ -48,6 +51,15 @@ return (
 	isCorrelatedWithAnotherComponent={false}
 >
 	<DetailAlumni {...{ data : {  }}} />
+</Layouts.DetailContainerLayout>
+<Layouts.DetailContainerLayout
+	title={"Detail Alumni1"}
+	singularName={"Alumni1"}
+	items={{}}
+	isLoading={isLoading.detailAlumni1}
+	isCorrelatedWithAnotherComponent={false}
+>
+	<DetailAlumni1 {...{ data : {  }}} />
 </Layouts.DetailContainerLayout>
 
 	</Layouts.ViewContainerLayout>

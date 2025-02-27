@@ -12,7 +12,7 @@ import { isMobile } from '@/commons/utils/responsive';
 
 import * as Layouts from "@/commons/layouts";
 
-const SemuaTable = ({ alumniDataList
+const SemuaTable = ({ alumniDataList1
 
 	}) => {
   const { checkPermission } = useAuth();
@@ -25,7 +25,7 @@ const SemuaTable = ({ alumniDataList
   
   return (
     <Layouts.ListComponentTableLayout
-  	  items={[alumniDataList]}
+  	  items={[alumniDataList1]}
   	  detail={detail}
   	  itemsAttrs={[
   	  ]}
@@ -36,7 +36,7 @@ const SemuaTable = ({ alumniDataList
           	variant=
           		"primary"
             >
-              Detail
+              Detail1
             </Button>
           </Link>
           

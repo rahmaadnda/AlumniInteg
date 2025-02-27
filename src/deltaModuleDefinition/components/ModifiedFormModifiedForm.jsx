@@ -29,7 +29,7 @@ import verifyMahasiswa from '../services/verifyMahasiswa'
 import { notifyError } from "@/commons/utils/toaster";
 import * as Layouts from "@/commons/layouts";
 
-const ModifiedFormFormCariMahasiswa = ({ 
+const ModifiedFormModifiedForm = ({ 
  }) => {
   const { 
     control, 
@@ -44,7 +44,7 @@ const ModifiedFormFormCariMahasiswa = ({
   
   const navigate = useNavigate()
   
-  const search = (data) => {
+  const onSubmitEvent = (data) => {
     const cleanData = cleanFormData(data)
     verifyMahasiswa({
       ...cleanData,
@@ -61,8 +61,8 @@ const ModifiedFormFormCariMahasiswa = ({
   
   return (
 	  <Layouts.FormComponentLayout
-		  title="Form Cari Mahasiswa" 
-		  onSubmit={handleSubmit(search)}
+		  title="Modified Form" 
+		  onSubmit={handleSubmit(onSubmitEvent)}
 	
 	    vas={[
 		  ]}
@@ -73,10 +73,10 @@ const ModifiedFormFormCariMahasiswa = ({
 		  ]}
 	
 		  itemsEvents={[
-				<Button key="Search" type="submit" variant="primary">Search</Button>
+				<Button key="OnSubmit Event" type="submit" variant="primary">OnSubmit Event</Button>
 	    ]}
 	  />
   )
 }
 
-export default ModifiedFormFormCariMahasiswa
+export default ModifiedFormModifiedForm

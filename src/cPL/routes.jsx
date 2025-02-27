@@ -3,7 +3,6 @@
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
-import RequireAuth from "@/commons/auth/RequireAuth";
 import React from 'react';
 
 import DaftarCPLPage from './containers/DaftarCPLPage'
@@ -14,7 +13,7 @@ import UbahCPLPage from './containers/UbahCPLPage'
 const cPLRoutes = [
 	{ 
 		path: "/cpl",
-		element: <RequireAuth permissionNeeded="ReadRencanaStudiMe" ><DaftarCPLPage/></RequireAuth>
+		element: <DaftarCPLPage />,
 	},
 	{ 
 		path: "/cpl/tambah",
@@ -26,7 +25,7 @@ const cPLRoutes = [
 	},
 	{ 
 		path: "/cpl/:id",
-		element: <RequireAuth permissionNeeded="CreateRencanaStudiMe" ><DetailCPLPage/></RequireAuth>
+		element: <DetailCPLPage />,
 	}
 ]
 

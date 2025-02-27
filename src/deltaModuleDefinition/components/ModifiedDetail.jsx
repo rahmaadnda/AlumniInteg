@@ -13,7 +13,7 @@ import { Button, Detail, VisualizationAttr, Modal, Spinner } from '@/commons/com
 import * as Layouts from "@/commons/layouts";
 
 
-const DetailsMahasiswa = ({ data }) => {
+const ModifiedDetail = ({ data }) => {
     const { checkPermission } = useAuth();
     const navigate = useNavigate();
   
@@ -23,17 +23,17 @@ const DetailsMahasiswa = ({ data }) => {
       item={data}
       itemsAttrs={[
         {
-          id: "tahunAngkatan",
+          id: "angkatan",
           condition: "",
-          label: "Tahun Angkatan",
-          featureName: "tahunAngkatan",
+          label: "angkatan",
+          featureName: "invalid",
         }
         ,
         {
-          id: "statusAkademik",
+          id: "status",
           condition: "",
-          label: "Status Akademik",
-          featureName: "statusAkademik",
+          label: "status",
+          featureName: "invalid",
         }
         
       ]}
@@ -47,4 +47,4 @@ const DetailsMahasiswa = ({ data }) => {
   );
 };
 
-export default DetailsMahasiswa;
+export default ModifiedDetail;

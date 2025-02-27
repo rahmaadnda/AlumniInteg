@@ -3,7 +3,7 @@ import tokenManager from "@/commons/utils/token";
 import environment from "@/commons/utils/environment";
 import { notifyError } from "@/commons/utils/toaster";
 
-const getDetailDataMahasiswa = (params = {}) => {
+const getModifiedDataBinding = (params = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	let paramsGet = Object.assign(params, {token});
@@ -18,4 +18,4 @@ const getDetailDataMahasiswa = (params = {}) => {
 	})
 } 
 
-export default getDetailDataMahasiswa
+export default getModifiedDataBinding

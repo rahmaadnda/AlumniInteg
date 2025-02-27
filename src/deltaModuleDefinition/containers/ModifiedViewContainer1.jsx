@@ -9,10 +9,10 @@ import * as Layouts from '@/commons/layouts';
 import { Link, useParams } from "react-router";
 import { HeaderContext } from "@/commons/components"
 import { useSearchParams } from "react-router";
-import ModifiedFormFormCariMahasiswa from '../components/ModifiedFormFormCariMahasiswa'
-const CariMahasiswa = props => {
+import ModifiedFormModifiedForm from '../components/ModifiedFormModifiedForm'
+const ModifiedViewContainer1 = props => {
 const [isLoading, setIsLoading] = useState({
-	formCariMahasiswa: false,
+	modifiedForm: false,
 
 	});
 	const { setTitle } = useContext(HeaderContext);
@@ -21,7 +21,7 @@ const [isLoading, setIsLoading] = useState({
 
 	
 	useEffect(() => {
-		setTitle("Cari Mahasiswa")
+		setTitle("Modified ViewContainer1")
 	}, []);
 return (
 	<Layouts.ViewContainerLayout
@@ -32,10 +32,10 @@ return (
 		}
 	>
 <Layouts.FormContainerLayout
-		singularName={"Cari"}
+		singularName={"Form"}
 		
 	>
-		<ModifiedFormFormCariMahasiswa
+		<ModifiedFormModifiedForm
 			{...props}
 		/>
 	</Layouts.FormContainerLayout>
@@ -43,5 +43,5 @@ return (
 	</Layouts.ViewContainerLayout>
   )
 }
-export default CariMahasiswa
+export default ModifiedViewContainer1
 
