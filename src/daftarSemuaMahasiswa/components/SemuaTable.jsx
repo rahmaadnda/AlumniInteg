@@ -4,7 +4,7 @@
 	version 3.5.10
 */
 import React from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from "react-router";
 
 import { useAuth } from '@/commons/auth';
 import { Button, Modal } from '@/commons/components';
@@ -27,7 +27,6 @@ const SemuaTable = ({ mahasiswaDataList, angkatanSelectionField
     <Layouts.ListComponentTableLayout
   	  items={[mahasiswaDataList, angkatanSelectionField]}
   	  detail={detail}
-  	  isSearchable
   	  filterFields={[
   	    {
   	      label: "Angkatan",
@@ -36,20 +35,6 @@ const SemuaTable = ({ mahasiswaDataList, angkatanSelectionField
   	    }
   	  ]}
   	  itemsAttrs={[
-  		{
-            id: "nama",
-            condition: "isHeading",
-            label: "Nama",
-            featureName: "nama",
-  		}
-  ,
-  		{
-            id: "nPM",
-            condition: "isHeading",
-            label: "NPM",
-            featureName: "npm",
-  		}
-  ,
   		{
             id: "tahunAngkatan",
             condition: "isHeading",
@@ -67,7 +52,8 @@ const SemuaTable = ({ mahasiswaDataList, angkatanSelectionField
   	  ]}
         itemsEvents={(semuaItem) => [
           <Link to={`/daftarsemuamahasiswa/detail/${semuaItem.id}`}>
-            <Button 
+            <Button
+          	size="sm"
           	variant=
           		"primary"
             >
