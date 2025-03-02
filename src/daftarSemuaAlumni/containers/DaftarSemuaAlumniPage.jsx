@@ -12,8 +12,8 @@ import { useNavigate } from "react-router";
 import { useAuth } from '@/commons/auth';
 import SemuaTable from "../components/SemuaTable";
 
-import getAlumniDataList from '../services/getAlumniDataList'
 import getTahunLulusSelectionField from '../services/getTahunLulusSelectionField'
+import getAlumniDataList from '../services/getAlumniDataList'
 const DaftarSemuaAlumniPage = props => {
 const { checkPermission } = useAuth();
 
@@ -23,16 +23,16 @@ const { checkPermission } = useAuth();
 	});
 	const { setTitle } = useContext(HeaderContext);
 
-const [alumniDataList, setAlumniDataList] = useState()
 const [tahunLulusSelectionField, setTahunLulusSelectionField] = useState()
+const [alumniDataList, setAlumniDataList] = useState()
 useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, tableSemuaAlumni: true}))
-				const { data: alumniDataList } = await getAlumniDataList()
 				const { data: tahunLulusSelectionField } = await getTahunLulusSelectionField()
-				setAlumniDataList(alumniDataList.data)
+				const { data: alumniDataList } = await getAlumniDataList()
 				setTahunLulusSelectionField(tahunLulusSelectionField.data)
+				setAlumniDataList(alumniDataList.data)
 			} finally {
 				setIsLoading(prev => ({...prev, tableSemuaAlumni: false}))
 			}
@@ -55,12 +55,12 @@ return (
 <Layouts.ListContainerTableLayout
 	title={"Table Semua Alumni"}
 	singularName={"Semua"}
-	items={[alumniDataList, tahunLulusSelectionField]}
+	items={[tahunLulusSelectionField, alumniDataList]}
 	isLoading={isLoading.tableSemuaAlumni}
 >
 	<SemuaTable
-		alumniDataList={alumniDataList}
 		tahunLulusSelectionField={tahunLulusSelectionField}
+		alumniDataList={alumniDataList}
 		
 	/>
 </Layouts.ListContainerTableLayout>
