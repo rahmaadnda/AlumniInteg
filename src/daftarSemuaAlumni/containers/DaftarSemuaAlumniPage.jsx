@@ -6,16 +6,16 @@
 import React, { useEffect, useState, useContext} from 'react'
 import { Button, Spinner } from "@/commons/components"
 import * as Layouts from '@/commons/layouts';
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams } from "react-router";
 import { HeaderContext } from "@/commons/components"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router";
 import { useAuth } from '@/commons/auth';
-import SemuaTable from '../components/SemuaTable'
+import SemuaTable from "../components/SemuaTable";
 
-import getTahunLulusSelectionField from '../services/getTahunLulusSelectionField'
 import getAlumniDataList from '../services/getAlumniDataList'
+import getTahunLulusSelectionField from '../services/getTahunLulusSelectionField'
 const DaftarSemuaAlumniPage = props => {
-const { checkPermission } = useAuth()
+const { checkPermission } = useAuth();
 
 	const [isLoading, setIsLoading] = useState({
 	tableSemuaAlumni: false,
@@ -23,16 +23,16 @@ const { checkPermission } = useAuth()
 	});
 	const { setTitle } = useContext(HeaderContext);
 
-const [tahunLulusSelectionField, setTahunLulusSelectionField] = useState()
 const [alumniDataList, setAlumniDataList] = useState()
+const [tahunLulusSelectionField, setTahunLulusSelectionField] = useState()
 useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, tableSemuaAlumni: true}))
-				const { data: tahunLulusSelectionField } = await getTahunLulusSelectionField()
 				const { data: alumniDataList } = await getAlumniDataList()
-				setTahunLulusSelectionField(tahunLulusSelectionField.data)
+				const { data: tahunLulusSelectionField } = await getTahunLulusSelectionField()
 				setAlumniDataList(alumniDataList.data)
+				setTahunLulusSelectionField(tahunLulusSelectionField.data)
 			} finally {
 				setIsLoading(prev => ({...prev, tableSemuaAlumni: false}))
 			}
@@ -55,12 +55,12 @@ return (
 <Layouts.ListContainerTableLayout
 	title={"Table Semua Alumni"}
 	singularName={"Semua"}
-	items={[tahunLulusSelectionField, alumniDataList]}
+	items={[alumniDataList, tahunLulusSelectionField]}
 	isLoading={isLoading.tableSemuaAlumni}
 >
 	<SemuaTable
-		tahunLulusSelectionField={tahunLulusSelectionField}
 		alumniDataList={alumniDataList}
+		tahunLulusSelectionField={tahunLulusSelectionField}
 		
 	/>
 </Layouts.ListContainerTableLayout>
