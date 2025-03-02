@@ -3,8 +3,8 @@
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.5.10
 */
-import RequireAuth from "@/commons/auth/RequireAuth";
-import React from 'react';
+import RequireAuth from '@/commons/auth/RequireAuth'
+
 import DaftarSemesterPage from './containers/DaftarSemesterPage'
 import UbahSemesterPage from './containers/UbahSemesterPage'
 import TambahSemesterPage from './containers/TambahSemesterPage'
