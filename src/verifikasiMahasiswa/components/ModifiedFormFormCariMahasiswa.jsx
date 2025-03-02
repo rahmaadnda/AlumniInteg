@@ -50,7 +50,7 @@ const ModifiedFormFormCariMahasiswa = ({
       ...cleanData,
     })
     .then(({ data: { data } }) => {
-      navigate(`/verifikasimahasiswa/detail/${data.}`)
+      navigate(`/verifikasimahasiswa/detail/${data.id}`)
     })
     .catch((error) => {
       console.error(error);
