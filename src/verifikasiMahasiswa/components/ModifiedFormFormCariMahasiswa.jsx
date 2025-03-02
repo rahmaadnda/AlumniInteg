@@ -5,7 +5,7 @@
 */
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
-import { useNavigate, useSearchParams } from "react-router";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   Button,
   Form,
@@ -50,7 +50,7 @@ const ModifiedFormFormCariMahasiswa = ({
       ...cleanData,
     })
     .then(({ data: { data } }) => {
-      navigate(`/verifikasimahasiswa/detail/${data.}`)
+      navigate(`/verifikasimahasiswa/detail/${data.id}`)
     })
     .catch((error) => {
       console.error(error);
@@ -68,12 +68,41 @@ const ModifiedFormFormCariMahasiswa = ({
 		  ]}
 	
 		  formFields={[
-		  
+			  
+			  <Controller
+		        name="npm"
+		        control={control}
+		        render={({ field, fieldState }) => (
+				  <InputField
+		            label="NPM"
+		            placeholder="Masukkan npm"
+		            fieldState={fieldState}
+					{...field}
+					isRequired={false}
+		          />
+		        )}
+		      />
+	,
+			  
+			  <Controller
+		        name="nama"
+		        control={control}
+		        render={({ field, fieldState }) => (
+				  <InputField
+		            label="Nama"
+		            placeholder="Masukkan nama"
+		            fieldState={fieldState}
+					{...field}
+					isRequired={false}
+		          />
+		        )}
+		      />
+		  ,
 	
 		  ]}
 	
 		  itemsEvents={[
-				<Button key="Search" type="submit" variant="primary">Search</Button>
+				<Button type="submit" variant="primary">Search</Button>
 	    ]}
 	  />
   )
