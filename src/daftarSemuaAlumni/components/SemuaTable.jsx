@@ -4,7 +4,7 @@
 	version 3.5.10
 */
 import React from 'react';
-import { Link, useNavigate, useParams } from "react-router";
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import { useAuth } from '@/commons/auth';
 import { Button, Modal } from '@/commons/components';
@@ -12,7 +12,7 @@ import { isMobile } from '@/commons/utils/responsive';
 
 import * as Layouts from "@/commons/layouts";
 
-const SemuaTable = ({ alumniDataList, tahunLulusSelectionField
+const SemuaTable = ({ tahunLulusSelectionField, alumniDataList
 
 	}) => {
   const { checkPermission } = useAuth();
@@ -25,7 +25,7 @@ const SemuaTable = ({ alumniDataList, tahunLulusSelectionField
   
   return (
     <Layouts.ListComponentTableLayout
-  	  items={[alumniDataList, tahunLulusSelectionField]}
+  	  items={[tahunLulusSelectionField, alumniDataList]}
   	  detail={detail}
   	  isSearchable
   	  filterFields={[
@@ -36,6 +36,7 @@ const SemuaTable = ({ alumniDataList, tahunLulusSelectionField
   	    }
   	  ]}
   	  itemsAttrs={[
+  ,
   		{
             id: "nama",
             condition: "isHeading",
@@ -56,12 +57,10 @@ const SemuaTable = ({ alumniDataList, tahunLulusSelectionField
             label: "Tahun Lulus",
             featureName: "tahunLulus",
   		}
-  ,
   	  ]}
         itemsEvents={(semuaItem) => [
           <Link to={`/daftarsemuaalumni/detail/${semuaItem.id}`}>
-            <Button
-          	size="sm"
+            <Button 
           	variant=
           		"primary"
             >
