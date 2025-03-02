@@ -6,9 +6,9 @@
 import React, { useEffect, useState, useContext} from 'react'
 import { Button, Spinner } from "@/commons/components"
 import * as Layouts from '@/commons/layouts';
-import { Link, useParams } from "react-router";
+import { Link, useParams } from 'react-router-dom'
 import { HeaderContext } from "@/commons/components"
-import { useSearchParams } from "react-router";
+import { useSearchParams } from 'react-router-dom';
 import ModifiedFormFormCariMahasiswa from '../components/ModifiedFormFormCariMahasiswa'
 const CariMahasiswa = props => {
 const [isLoading, setIsLoading] = useState({

@@ -1,11 +1,11 @@
 /*
 	Generated on 22/10/2024 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.5.10
+	version 3.5.5
 */
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
-import { useNavigate, useSearchParams } from "react-router";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   Button,
   Form,
@@ -36,7 +36,7 @@ const ModifiedFormFormProfileUpdateMahasiswa = ({
   const { 
     control, 
     handleSubmit,
-  } = useForm()
+  } = useForm({ defaultValues: dataMahasiswaUpdate })
   
   
   
@@ -52,7 +52,7 @@ const ModifiedFormFormProfileUpdateMahasiswa = ({
       ...cleanData,
     })
     .then(({ data: { data } }) => {
-      navigate(`/profilemahasiswa`)
+     navigate(`/profilemahasiswa`)
     })
     .catch((error) => {
       console.error(error);
@@ -72,7 +72,38 @@ const ModifiedFormFormProfileUpdateMahasiswa = ({
 		  formFields={[
 			  
 			  <Controller
-			    key="tahunAngkatan"
+		        name="nama"
+		        control={control}
+		        render={({ field, fieldState }) => (
+				  <InputField
+		            label="Nama"
+		            placeholder="Masukkan nama"
+					disabled
+		            defaultValue={dataMahasiswaUpdate.nama}	            fieldState={fieldState}
+					{...field}
+					isRequired={false}
+		          />
+		        )}
+		      />
+	,
+			  
+			  <Controller
+		        name="npm"
+		        control={control}
+		        render={({ field, fieldState }) => (
+				  <InputField
+		            label="NPM"
+		            placeholder="Masukkan npm"
+					disabled
+		            defaultValue={dataMahasiswaUpdate.npm}	            fieldState={fieldState}
+					{...field}
+					isRequired={false}
+		          />
+		        )}
+		      />
+	,
+			  
+			  <Controller
 		        name="tahunAngkatan"
 		        control={control}
 		        render={({ field, fieldState }) => (
@@ -80,7 +111,7 @@ const ModifiedFormFormProfileUpdateMahasiswa = ({
 		            label="Tahun Angkatan"
 		            placeholder="Masukkan tahun angkatan"
 					disabled
-		            fieldState={fieldState}
+		            defaultValue={dataMahasiswaUpdate.tahunAngkatan}	            fieldState={fieldState}
 					{...field}
 					isRequired={false}
 		          />
@@ -89,7 +120,6 @@ const ModifiedFormFormProfileUpdateMahasiswa = ({
 	,
 			  
 			  <Controller
-			    key="statusAkademik"
 		        name="statusAkademik"
 		        control={control}
 		        render={({ field, fieldState }) => (
@@ -97,7 +127,7 @@ const ModifiedFormFormProfileUpdateMahasiswa = ({
 		            label="Status Akademik"
 		            placeholder="Masukkan status akademik"
 					disabled
-		            fieldState={fieldState}
+		            defaultValue={dataMahasiswaUpdate.statusAkademik}	            fieldState={fieldState}
 					{...field}
 					isRequired={false}
 		          />
@@ -106,7 +136,6 @@ const ModifiedFormFormProfileUpdateMahasiswa = ({
 	,
 			  
 			  <Controller
-			    key="email"
 		        name="email"
 		        control={control}
 		        render={({ field, fieldState }) => (
@@ -114,7 +143,7 @@ const ModifiedFormFormProfileUpdateMahasiswa = ({
 		            label="Email"
 		            placeholder="Masukkan email"
 					disabled
-		            fieldState={fieldState}
+		            defaultValue={dataMahasiswaUpdate.email}	            fieldState={fieldState}
 					{...field}
 					isRequired={false}
 		          />
@@ -122,10 +151,27 @@ const ModifiedFormFormProfileUpdateMahasiswa = ({
 		      />
 		  ,
 	
+		  
+		  <Controller
+			name="isPublic"
+			control={control}
+			render={({ field }) => (
+				<div className="form-group">
+				<label>
+					<input
+					type="checkbox"
+					{...field}
+					checked={field.value} 
+					/>
+					Izinkan Akses Profile kepada Alumni dan Industri
+				</label>
+				</div>
+			)}
+			/>
 		  ]}
 	
 		  itemsEvents={[
-				<Button key="Simpan" type="submit" variant="primary">Simpan</Button>
+				<Button type="submit" variant="primary">Simpan</Button>
 	    ]}
 	  />
   )
