@@ -6,48 +6,35 @@
 import React, { useEffect, useState, useContext} from 'react'
 import { Button, Spinner } from "@/commons/components"
 import * as Layouts from '@/commons/layouts';
-import { Link, useParams } from "react-router";
+import { Link, useParams } from 'react-router-dom'
 import { HeaderContext } from "@/commons/components"
-import { useNavigate } from "react-router";
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/commons/auth';
-import SemuaTable from "../components/SemuaTable";
+import SemuaTable from '../components/SemuaTable'
 
+import getTahunLulusSelectionField from '../services/getTahunLulusSelectionField'
 import getAlumniDataList from '../services/getAlumniDataList'
-import SemuaTable from "../components/SemuaTable";
-
-import getAlumniDataList1 from '../services/getAlumniDataList1'
 const DaftarSemuaAlumniPage = props => {
-const { checkPermission } = useAuth();
+const { checkPermission } = useAuth()
 
 	const [isLoading, setIsLoading] = useState({
 	tableSemuaAlumni: false,
-	tableSemuaAlumni1: false,
 
 	});
 	const { setTitle } = useContext(HeaderContext);
 
+const [tahunLulusSelectionField, setTahunLulusSelectionField] = useState()
 const [alumniDataList, setAlumniDataList] = useState()
 useEffect(() => {
 		const fetchData = async () => {
 			try {
 				setIsLoading(prev => ({...prev, tableSemuaAlumni: true}))
+				const { data: tahunLulusSelectionField } = await getTahunLulusSelectionField()
 				const { data: alumniDataList } = await getAlumniDataList()
+				setTahunLulusSelectionField(tahunLulusSelectionField.data)
 				setAlumniDataList(alumniDataList.data)
 			} finally {
 				setIsLoading(prev => ({...prev, tableSemuaAlumni: false}))
-			}
-		}
-		fetchData()	
-  	}, [])
-const [alumniDataList1, setAlumniDataList1] = useState()
-useEffect(() => {
-		const fetchData = async () => {
-			try {
-				setIsLoading(prev => ({...prev, tableSemuaAlumni1: true}))
-				const { data: alumniDataList1 } = await getAlumniDataList1()
-				setAlumniDataList1(alumniDataList1.data)
-			} finally {
-				setIsLoading(prev => ({...prev, tableSemuaAlumni1: false}))
 			}
 		}
 		fetchData()	
@@ -68,22 +55,12 @@ return (
 <Layouts.ListContainerTableLayout
 	title={"Table Semua Alumni"}
 	singularName={"Semua"}
-	items={[alumniDataList]}
+	items={[tahunLulusSelectionField, alumniDataList]}
 	isLoading={isLoading.tableSemuaAlumni}
 >
 	<SemuaTable
+		tahunLulusSelectionField={tahunLulusSelectionField}
 		alumniDataList={alumniDataList}
-		
-	/>
-</Layouts.ListContainerTableLayout>
-<Layouts.ListContainerTableLayout
-	title={"Table Semua Alumni1"}
-	singularName={"Semua"}
-	items={[alumniDataList1]}
-	isLoading={isLoading.tableSemuaAlumni1}
->
-	<SemuaTable
-		alumniDataList1={alumniDataList1}
 		
 	/>
 </Layouts.ListContainerTableLayout>

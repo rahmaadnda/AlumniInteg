@@ -6,21 +6,32 @@
 import React, { useEffect, useState, useContext} from 'react'
 import { Button, Spinner } from "@/commons/components"
 import * as Layouts from '@/commons/layouts';
-import { Link, useParams } from "react-router";
+import { Link, useParams } from 'react-router-dom'
 import { HeaderContext } from "@/commons/components"
 
 import DetailAlumni from '../components/DetailAlumni'
-import DetailAlumni1 from '../components/DetailAlumni1'
+import getDetailDataAlumni from '../services/getDetailDataAlumni'
 const DetailAlumniPage = props => {
 const [isLoading, setIsLoading] = useState({
 	detailAlumni: false,
-	detailAlumni1: false,
 
 	});
 	const { setTitle } = useContext(HeaderContext);
 
+const [detailDataAlumni, setDetailDataAlumni] = useState()
 const { id } = useParams()
-const { id1 } = useParams()
+useEffect(() => {
+	const fetchData = async () => {
+		try {
+			setIsLoading(prev => ({...prev, detailAlumni: true}))
+			const { data: detailDataAlumni } = await getDetailDataAlumni({ id })
+			setDetailDataAlumni(detailDataAlumni.data)
+		} finally {
+			setIsLoading(prev => ({...prev, detailAlumni: false}))
+		}
+	}
+	 fetchData()
+}, [])
 
 	
 	useEffect(() => {
@@ -46,20 +57,11 @@ return (
 <Layouts.DetailContainerLayout
 	title={"Detail Alumni"}
 	singularName={"Alumni"}
-	items={{}}
+	items={{...detailDataAlumni}}
 	isLoading={isLoading.detailAlumni}
 	isCorrelatedWithAnotherComponent={false}
 >
-	<DetailAlumni {...{ data : {  }}} />
-</Layouts.DetailContainerLayout>
-<Layouts.DetailContainerLayout
-	title={"Detail Alumni1"}
-	singularName={"Alumni1"}
-	items={{}}
-	isLoading={isLoading.detailAlumni1}
-	isCorrelatedWithAnotherComponent={false}
->
-	<DetailAlumni1 {...{ data : {  }}} />
+	<DetailAlumni {...{ data : { ...detailDataAlumni }}} />
 </Layouts.DetailContainerLayout>
 
 	</Layouts.ViewContainerLayout>
