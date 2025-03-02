@@ -38,6 +38,54 @@ export const settingsMenu = [
   
 export default menus
 addMenu({
+	route: '/matakuliah',
+    label: 'Mata Kuliah',
+	subMenus: []
+})
+
+addMenu({
+	route: '/buatakunalumni',
+    label: 'Buat Akun Alumni',
+	subMenus: []
+})
+
+addMenu({
+	route: '/kurikulum',
+    label: 'Kurikulum',
+	subMenus: []
+})
+
+addMenu({
+	route: '#',
+    label: 'IRS',
+	subMenus: []
+})
+
+addSubMenu('IRS', {
+	route: '/irs/ringkasan',
+	label: 'Lihat IRS',
+	
+})
+
+addSubMenu('IRS', {
+	route: '/irs/isi',
+	label: 'Isi/Ubah IRS',
+	
+})
+
+addSubMenu('IRS', {
+	route: '/irs/pengaturan',
+	label: 'Pengaturan Pengisian IRS',
+	
+})
+
+addMenu({
+	route: '/updatelulusan',
+    label: 'Update Lulusan',
+	subMenus: []
+})
+
+addMenu({
 	route: '#',
     label: 'Daftar Pengguna',
 	subMenus: []
@@ -74,45 +122,9 @@ addSubMenu('Daftar Pengguna', {
 })
 
 addMenu({
-	route: '/profilemahasiswa',
-    label: 'Profile Mahasiswa',
-	subMenus: []
-})
-
-addMenu({
 	route: '/kelas',
     label: 'Kelas',
 	subMenus: []
-})
-
-addMenu({
-	route: '/pembayaran',
-    label: 'Pembayaran',
-	subMenus: []
-})
-
-addMenu({
-	route: '/semester',
-    label: 'Semester',
-	subMenus: []
-})
-
-addMenu({
-	route: '#',
-    label: 'Verifikasi Identitas',
-	subMenus: []
-})
-
-addSubMenu('Verifikasi Identitas', {
-	route: '/verifikasialumni',
-	label: 'Verifikasi Alumni',
-	
-})
-
-addSubMenu('Verifikasi Identitas', {
-	route: '/verifikasimahasiswa',
-	label: 'Verifikasi Mahasiswa',
-	
 })
 
 addMenu({
@@ -134,9 +146,21 @@ addSubMenu('Akademis', {
 })
 
 addMenu({
-	route: '/matakuliah',
-    label: 'Mata Kuliah',
+	route: '#',
+    label: 'Verifikasi Identitas',
 	subMenus: []
+})
+
+addSubMenu('Verifikasi Identitas', {
+	route: '/verifikasialumni',
+	label: 'Verifikasi Alumni',
+	
+})
+
+addSubMenu('Verifikasi Identitas', {
+	route: '/verifikasimahasiswa',
+	label: 'Verifikasi Mahasiswa',
+	
 })
 
 addMenu({
@@ -164,62 +188,8 @@ addSubMenu('CPMK', {
 })
 
 addMenu({
-	route: '#',
-    label: 'IRS',
-	subMenus: []
-})
-
-addSubMenu('IRS', {
-	route: '/irs/ringkasan',
-	label: 'Lihat IRS',
-	
-})
-
-addSubMenu('IRS', {
-	route: '/irs/isi',
-	label: 'Isi/Ubah IRS',
-	
-})
-
-addSubMenu('IRS', {
-	route: '/irs/pengaturan',
-	label: 'Pengaturan Pengisian IRS',
-	
-})
-
-addMenu({
-	route: '/profilealumni',
-    label: 'Profile Alumni',
-	subMenus: []
-})
-
-addMenu({
-	route: '/buatakunalumni',
-    label: 'Buat Akun Alumni',
-	subMenus: []
-})
-
-addMenu({
-	route: '/penilaian-kelas',
-    label: 'Penilaian Kelas',
-	subMenus: []
-})
-
-addMenu({
 	route: '/programstudi',
     label: 'Program Studi',
-	subMenus: []
-})
-
-addMenu({
-	route: '/kurikulum',
-    label: 'Kurikulum',
-	subMenus: []
-})
-
-addMenu({
-	route: '/updatelulusan',
-    label: 'Update Lulusan',
 	subMenus: []
 })
 
@@ -239,4 +209,34 @@ addSubMenu('CPL', {
 	route: '/cpl/laporan',
 	label: 'Laporan CPL',
 	
+})
+
+addMenu({
+	route: '/profilemahasiswa',
+    label: 'Profile Mahasiswa',
+	subMenus: []
+})
+
+addMenu({
+	route: '/semester',
+    label: 'Semester',
+	subMenus: []
+})
+
+addMenu({
+	route: '/profilealumni',
+    label: 'Profile Alumni',
+	subMenus: []
+})
+
+addMenu({
+	route: '/penilaian-kelas',
+    label: 'Penilaian Kelas',
+	subMenus: []
+})
+
+addMenu({
+	route: '/pembayaran',
+    label: 'Pembayaran',
+	subMenus: []
 })
